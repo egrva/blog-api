@@ -1,0 +1,49 @@
+POST http://localhost/api/registration
+Content-Type: application/json
+
+{
+  "email" : "egorowanastena@mail.ru",
+  "password": "nastya",
+  "name" : "nastya",
+  "phoneNumber" : "79172588896"
+}
+
+###
+
+GET http://localhost/api/confirm/947af053-531b-4429-a667-a87148203bee
+
+###
+
+POST http://localhost/api/login
+Content-Type: application/json
+
+{
+  "email" : "egorowanastena@mail.ru",
+  "password": "nastya"
+}
+
+###
+
+GET http://localhost/api/profile
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwibG9naW4iOiJlZ29yb3dhbmFzdGVuYUBtYWlsLnJ1Iiwic3RhdGUiOiJDT05GSVJNRUQifQ.r3YZ3slClYjvlEOiY7VQUOp5gpIjHq5vsgd4X03cjBU
+
+###
+
+
+POST http://localhost/api/files
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNCIsIm5hbWUiOiJuYXN0eWEiLCJyb2xlIjoiVVNFUiJ9.p5-Y_OXCC5J6Fruz-N2qmnXIscOYB4Q_K2kFN41NP8o
+accept: */*
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="French-Revolution.jpg"
+
+< ./img/French-Revolution.jpg
+--WebAppBoundary--
+
+###
+
+GET http://localhost/api/files/0d85318d-7ea6-4b50-8bd7-5f94120fb9a7.jpg
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNCIsIm5hbWUiOiJuYXN0eWEiLCJyb2xlIjoiVVNFUiJ9.p5-Y_OXCC5J6Fruz-N2qmnXIscOYB4Q_K2kFN41NP8o
+
+###
